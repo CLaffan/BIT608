@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Booking List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="accomodation, motueka">
+    <meta name="description" content="Bed and breakfast accomodation in Motueka New Zealand">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='/style/style.css'>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Index.html">Motueka B&B</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="Index.html">Home</a></li>
+                        <li><a href="makebooking.html">Make a Booking</a></li>
+                        <li><a href="listbookings.html">Bookings listing</a></li>
+                        <li><a href="viewbooking.html">View Booking</a></li>
+                        <li><a href="editbooking.html">Edit Booking</a></li>
+                        <li><a href="deletebooking.html">Delete Booking</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href='registermember.php'><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--main content-->
+        <div class="container-fluid">
+            <div class="col-sm-12">
+                <h1>Bookings List</h1>
+
+
+                <h2>Currently there are
+                    <!--?php echo $rowcount; ?--> * bookings
+                </h2>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Customer ID</th>
+                                <th>Room ID</th>
+                                <th>Room Name</th>
+                                <th>Check In</th>
+                                <th>Check Out</th>
+                                <th>Contact Number</th>
+                                <th>Booking Extras</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th><a href="viewbooking.html">[View]</a>  <a href="editbooking.html">[Edit]</a>  <a href="deletebooking.html">[Delete]</a></th>
+                        </tr>
+                        <tr>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th><a href="viewbooking.html">[View]</a>  <a href="editbooking.html">[Edit]</a>  <a href="deletebooking.html">[Delete]</a></th>
+                        </tr>
+                        <tr>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th><a href="viewbooking.html">[View]</a>  <a href="editbooking.html">[Edit]</a>  <a href="deletebooking.html">[Delete]</a></th>
+                        </tr>
+                        <tr>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th><a href="viewbooking.html">[View]</a>  <a href="editbooking.html">[Edit]</a>  <a href="deletebooking.html">[Delete]</a></th>
+                        </tr>
+                        <tr>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th>***</th>
+                            <th><a href="viewbooking.html">[View]</a>  <a href="editbooking.html">[Edit]</a>  <a href="deletebooking.html">[Delete]</a></th>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div> <!--end main content-->
+        </div> <!--end container-->
+
+
+
+    </div><br><br> <!--end of 2 column bootstrap content-->
+
+    <!--footer content-->
+    <div class="container-fluid text-center">
+        <div class="col-sm-12">
+            <div id="footer">
+                Copyright &copy; Motueka BnB 2024 | <a href="privacy.html">Privacy Statement</a> | BIT608 Web Programming |
+            </div>
+        </div>
+    </div> <!--end footer content-->
+
+
+</body>
+
+</html>
