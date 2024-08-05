@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Make a Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="accomodation, motueka">
+    <meta name="description" content="Bed and breakfast accomodation in Motueka New Zealand">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='/style/style.css'>
+</head>
+
+<body>
+    <div class="container"> <!---main content / sidenav container-->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Index.html">Motueka B&B</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="Index.html">Home</a></li>
+                        <li><a href="makebooking.html">Make a Booking</a></li>
+                        <li><a href="listbookings.html">Bookings listing</a></li>
+                        <li><a href="viewbooking.html">View Booking</a></li>
+                        <li><a href="editbooking.html">Edit Booking</a></li>
+                        <li><a href="deletebooking.html">Delete Booking</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div>
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="col-sm-6">
+                <h1 class="text-center">Hi [insert customer name]</h1>
+                <h2 class="text-center">Please make your booking</h2>
+                <form class="form-horizontal" action="/action_page.php">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="room">Room (name, type, beds)</label>
+                        <div class="col-sm-9">
+                            <input list="rooms" name="Rooms" class="form-control" placeholder="Kellie, S, 5" required>
+                            <datalist id="rooms">
+                                <option value="Kellie, S, 5"></option>
+                                <option value="Herman, D, 5"></option>
+                                <option value="Scarlett, D, 2"></option>
+                                <option value="Jelani, S, 2"></option>
+                                <option value="Sonya, S, 5"></option>
+                                <option value="Miranda, S, 4"></option>
+                                <option value="Helen, S, 2"></option>
+                                <option value="Octavia, D, 3"></option>
+                                <option value="Gretchen, D, 3"></option>
+                                <option value="Bernard, S, 5"></option>
+                                <option value="Dacey, D, 2"></option>
+                                <option value="Preston, D, 2"></option>
+                                <option value="Dane, S, 4"></option>
+                                <option value="Cole, S, 1"></option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="checkin">Checkin date:</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="checkin" placeholder="dd-mm-yyyy" name="date"
+                                required>
+                        </div>
+                    </div>
+
+                   
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="checkout">Checkout date:</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="checkout" placeholder="dd-mm-yyy" name="date"
+                                required>
+                        </div>
+
+                        <script>
+                            // Set the input value to today's date
+                            var checkoutInput = document.getElementById("checkout");
+                            var today = new Date();
+                            var tomorrow = new Date (today);
+                            tomorrow.setDate(today.getDate() +1);
+                            var yyyy = tomorrow.getFullYear();
+                            var mm = String(tomorrow.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+                            var dd = String(tomorrow.getDate()).padStart(2, '0');
+                            var formattedDate = yyyy + '-' + mm + '-' + dd;
+                            checkoutInput.value = formattedDate;
+                
+                            // Prevent selection of past dates
+                            checkoutInput.min = formattedDate;
+                          </script>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="tel">Phone:</label>
+                        <div class="col-sm-9">
+                            <input type="tel" class="form-control" id="tel" placeholder="(##) ### ####" name="tel"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="textarea">Booking extras:</label>
+                        <div class="col-sm-9">
+                            <textarea id="textarea" class="form-control" name="extras" rows="4" cols="50"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-10">
+                            <input type="submit" value="Submit"> <input type="reset" value="Reset">
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <h1 class="text-center">Check Room Availability</h1>
+                <div class="container">
+                    <form class="form-inline text" action="/action_page.php">
+                        <div class="form-group">
+                            <label for="start">Start date:</label>
+                            <input type="date" class="form-control" id="start" placeholder="dd-mm-yyy" name="start"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end">End date:</label>
+                            <input type="date" class="form-control" id="end" placeholder="dd-mm-yyy" name="end"
+                                required>
+                        </div>
+                        <input type="submit" value="Search Availability">
+                    </form><br>
+
+                    <div class="table-responsive">
+                        <div class="col-sm-6">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Room #</th>
+                                        <th>Room Name</th>
+                                        <th>Room Type</th>
+                                        <th>Beds</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <th>***</th>
+                                    <th>***</th>
+                                    <th>***</th>
+                                    <th>***</th>
+                                </tr>
+                                <tr>
+                                    <th>***</th>
+                                    <th>***</th>
+                                    <th>***</th>
+                                    <th>***</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div><br>
+        </div>
+
+        <div>
+            <div class="col-sm-3"></div>
+        </div>
+
+    </div><br><br> <!---end main content / sidenav container-->
+
+    <!--footer content-->
+    <div class="container-fluid text-center">
+        <div class="col-sm-12">
+            <div id="footer">
+                Copyright &copy; Motueka BnB 2024 | <a href="privacy.html">Privacy Statement</a> | BIT608 Web
+                Programming |
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
